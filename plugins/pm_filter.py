@@ -1084,7 +1084,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         cap = f"<b>Hai 👋 {message.from_user.mention}</b> 😍\n\n<b>📁 Found ✨  Files For Your Query : {search} 👇</b> "
     if imdb and imdb.get('poster'):
         try:
-            fmsg = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+            fmsg = await message.reply_photo(photo="https://telegra.ph/file/43b6c56689714d37af314.jpg",
                                       reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
